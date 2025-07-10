@@ -98,9 +98,24 @@ $json=json_encode($phpArray);
 var_dump($json);
 ```
 
-Will result
+Will result:
 
 ```php
 // array(2) { [0]=> string(4) "name" [1]=> string(7) "address" }
 // string(18) "["name","address"]"
+```
+
+If you want to print on the page:
+
+```php
+foreach($phpArray as $arr){
+    echo $arr. '<br>';
+    }
+```
+
+will result:
+
+```php
+// name
+// address
 ```
