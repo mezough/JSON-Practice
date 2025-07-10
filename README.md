@@ -97,3 +97,10 @@ echo '<br>';
 $json=json_encode($phpArray);
 var_dump($json);
 ```
+
+Will result
+
+```php
+// array(2) { [0]=> string(4) "name" [1]=> string(7) "address" }
+// string(18) "["name","address"]"
+```
