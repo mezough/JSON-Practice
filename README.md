@@ -160,3 +160,9 @@ will result:
 // name
 // address
 ```
+
+### Load JSON Data With _jQuery_ by **$getJSON**
+
+The getJSON() method is used to get JSON data using an AJAX HTTP GET request.
+
+> $(selector).getJSON(url,data,success(data,status,xhr))
