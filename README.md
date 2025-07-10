@@ -38,3 +38,27 @@ let myObj = {
 console.log(myObj.name); // Output: John
 console.log(myObj.age); // Output: 36
 ```
+
+### Access Array
+
+To access elements in an array, you use the index of the element, starting from 0. In the provided example, myArray[0] accesses the first element "John", and myArray[3] accesses the fourth element 36.
+
+```javascript
+let myArray = ["John", "Doe", 69000, 36, "M", true];
+console.log(myArray[0]); // Output: John
+console.log(myArray[3]); // Output: 36
+```
+
+### Access Nested Data
+
+To access nested data in an object or array, you use dot notation for objects and array indexing for arrays. In your example, myObj.tsmith[2] accesses the third element (42) from the array stored in the tsmith key.
+
+```javascript
+let myObj = {
+  ref: { name: 0, last: 1, age: 2 },
+  jdoe: ["John", "Doe", 39],
+  tsmith: ["Tom", "Smith", 42],
+};
+console.log(myObj.ref.last); // Output: 1
+console.log(myObj.tsmith[2]); // Output: 42
+```
