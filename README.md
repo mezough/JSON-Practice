@@ -74,3 +74,26 @@ console.log(obj.name); // Output: Ram
 let myJsonText = '{ "name": "abdel", "address": "france" }';
 let myJsObject = JSON.parse(myJsonObject);
 ```
+
+### Parsing JSON Arrays
+
+Parsing JSON arrays is done using JSON.parse(), which converts a JSON string representing an array into a JavaScript array.
+
+```javascript
+const text = '["Ford", "BMW", "Ferrari", "TATA"]';
+const myArr = JSON.parse(text);
+console.log(myArr[0]); // Output: Ford
+```
+
+### Encoding JSON in PHP (json_encode)
+
+PHP _json_encode()_ function is used for encoding JSON in PHP. This function returns the JSON representation of a value on success or FALSE on failure.
+
+```php
+$phpArray=['name', 'address'];
+var_dump($phpArray);
+echo '<br>';
+
+$json=json_encode($phpArray);
+var_dump($json);
+```
