@@ -62,3 +62,15 @@ let myObj = {
 console.log(myObj.ref.last); // Output: 1
 console.log(myObj.tsmith[2]); // Output: 42
 ```
+
+### Parsing Techniques
+
+**Parsing techniques** in JSON involve converting JSON strings into JavaScript objects using _JSON.parse()_ and vice versa using _JSON.stringify()_.
+
+```javascript
+const obj = JSON.parse('{"name":"Ram", "age":25, "city":Kolkata"}');
+console.log(obj.name); // Output: Ram
+// OR
+let myJsonText = '{ "name": "abdel", "address": "france" }';
+let myJsObject = JSON.parse(myJsonObject);
+```
