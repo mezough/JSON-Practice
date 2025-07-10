@@ -90,12 +90,14 @@ console.log(myArr[0]); // Output: Ford
 PHP _json_encode()_ function is used for encoding JSON in PHP. This function returns the JSON representation of a value on success or FALSE on failure.
 
 ```php
+<?php
 $phpArray=['name', 'address'];
 var_dump($phpArray);
 echo '<br>';
 
 $json=json_encode($phpArray);
 var_dump($json);
+?>
 ```
 
 Will result:
@@ -108,9 +110,11 @@ Will result:
 If you want to print on the page:
 
 ```php
+<?php
 foreach($phpArray as $arr){
     echo $arr. '<br>';
     }
+?>
 ```
 
 will result:
