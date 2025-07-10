@@ -93,7 +93,6 @@ PHP _json_encode()_ function is used for encoding JSON in PHP. This function ret
 <?php
 $phpArray=['name', 'address'];
 var_dump($phpArray);
-echo '<br>';
 
 $json=json_encode($phpArray);
 var_dump($json);
@@ -114,6 +113,44 @@ If you want to print on the page:
 foreach($phpArray as $arr){
     echo $arr. '<br>';
     }
+?>
+```
+
+will result:
+
+```php
+// name
+// address
+```
+
+### Decoding JSON in PHP (json_decode)
+
+PHP _json_decode()_ function is used for decoding JSON in PHP. This function returns the value decoded from json to appropriate PHP type.
+
+```php
+<?php
+$json='["name", "address"]';
+var_dump($json);
+
+$phpArray= json_decode($json);
+var_dump($phpArray);
+?>
+```
+
+Will result:
+
+```php
+// string(19) "["name", "address"]"
+// array(2) { [0]=> string(4) "name" [1]=> string(7) "address" }
+```
+
+If you want to print on the page:
+
+```php
+<?php
+foreach($phpArray as $arr){
+echo $arr. '<br>';
+}
 ?>
 ```
 
