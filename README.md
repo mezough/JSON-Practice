@@ -180,3 +180,54 @@ The _getJSON()_ method is used to get JSON-encoded data from the server using an
   - **xhr:** contains the XMLHttpRequest object
 
 **Return Value:** It returns XMLHttpRequest object.
+
+**_Example:_**
+
+```json
+// after you load jquery library in script element
+// employee.json file
+[
+  {
+    "name": "John",
+    "last": "Doe",
+    "age": 39
+  },
+  {
+    "name": "Tom",
+    "last": "Cruise",
+    "age": 45
+  },
+  {
+    "name": "Hood",
+    "last": "James",
+    "age": 29
+  }
+]
+```
+
+```javascript
+// index.html file
+ <script>
+        $.getJSON("employee.json", function (data) {
+            console.log(data);
+        })
+</script>
+```
+
+To loop the data:
+
+```javascript
+// index.html file
+ <script>
+        $.getJSON("employee.json", function (data) {
+            console.log(data);
+            var content = '';
+
+            for (var x in data) {
+                content += data[x].name + "<br>";
+                console.log(content);
+
+            }
+        })
+    </script>
+```
