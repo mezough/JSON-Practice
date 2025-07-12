@@ -247,6 +247,7 @@ The jQuery ajax() method is used to perform asynchronous HTTP requests, allowing
 **Syntax**
 
 > jQuery.ajax( url [, settings ] )
+>
 > **Settings:** are a set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with _$.ajaxSetup()_.
 
 **Settings**
@@ -280,7 +281,7 @@ The list of possible **settings** that can be passed to an Ajax request are list
 | timeout                      | Local timeout for the request, measured in milliseconds.                               |
 | traditional                  | Specifies whether to use the traditional style of parameter serialization.             |
 
-    **_Example:_**
+**Example**
 
 ```javascript
 // after you load jquery library in script element
