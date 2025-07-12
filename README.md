@@ -286,6 +286,7 @@ The list of possible **settings** that can be passed to an Ajax request are list
 ```javascript
 // after you load jquery library in script element
 
+// we will use url, dataType, cache, success and error parameters:
 $.ajax({
   url: "employee.json",
   dataType: "json",
@@ -296,7 +297,7 @@ $.ajax({
 });
 ```
 
-To loop and print the data:
+To loop and print the data if **sucess** with _for() loop_:
 
 ```javascript
 $.ajax({
@@ -305,16 +306,53 @@ $.ajax({
   cache: false,
   success: function (data, status) {
     console.log(data);
-    var content = "";
 
-    // loop the data
+    // Loop the data with for loop
+    var content = "";
     for (var x in data) {
       content += data[x].name + "<br>";
       console.log(content);
     }
-
-    //   print the data
     $("#show").html(content);
+  },
+});
+```
+
+To loop and print the data if **sucess** with _each() loop_:
+
+```javascript
+$.ajax({
+  url: "employee.json",
+  dataType: "json",
+  cache: false,
+  success: function (data, status) {
+    console.log(data);
+
+    // loop the data with each loop
+    $.each(data, function (index) {
+      $("#show").append("<p>" + data[index].name + "</p>");
+    });
+  },
+});
+```
+
+Print the data if **error**:
+
+```javascript
+$.ajax({
+  url: "employee.json",
+  dataType: "json",
+  cache: false,
+  success: function (data, status) {
+    $.each(data, function (index) {
+      $("#show").append("<p>" + data[index].name + "</p>");
+    });
+  },
+
+  //   print if error
+  error: function (xhr, statusText, error) {
+    var msg = "Sorry but there was an error: ";
+    $("#error").html(msg + xhr.status + " " + xhr.statusText);
   },
 });
 ```
