@@ -163,6 +163,16 @@ will result:
 
 ### Load JSON Data With _jQuery_ by **$getJSON**
 
-The getJSON() method is used to get JSON data using an AJAX HTTP GET request.
+> _comment:_ it should be loaded with the live server
+
+The _getJSON()_ method is used to get JSON-encoded data from the server using an AJAX HTTP GET request.
+**Syntax**
 
 > $(selector).getJSON(url,data,success(data,status,xhr))
+
+**Parameters:** This method accepts three parameters as mentioned above and described below:
+
+- url: It is a required parameter. It is used to specify the URL in the form of a string to which the request is sent
+- data: It is an optional parameter that specifies data that will be sent to the server.
+- callback function: It is also an optional parameter that runs when the request succeeds.
+  **Return Value:** It returns XMLHttpRequest object.
