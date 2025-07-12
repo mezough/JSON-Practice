@@ -207,11 +207,10 @@ The _getJSON()_ method is used to get JSON-encoded data from the server using an
 
 ```javascript
 // index.html file
- <script>
-        $.getJSON("employee.json", function (data) {
-            console.log(data);
-        })
-</script>
+
+$.getJSON("employee.json", function (data) {
+  console.log(data);
+});
 ```
 
 To loop the data:
