@@ -172,7 +172,8 @@ The _getJSON()_ method is used to get JSON-encoded data from the server using an
 
 **Parameters:** This method accepts three parameters as mentioned above and described below:
 
-- url: It is a required parameter. It is used to specify the URL in the form of a string to which the request is sent
-- data: It is an optional parameter that specifies data that will be sent to the server.
-- callback function: It is also an optional parameter that runs when the request succeeds.
-  **Return Value:** It returns XMLHttpRequest object.
+- **url:** It is a required parameter. It is used to specify the URL in the form of a string to which the request is sent
+- **data:** It is an optional parameter that specifies data that will be sent to the server.
+- **callback function:** It is also an optional parameter that runs when the request succeeds.
+
+**Return Value:** It returns XMLHttpRequest object.
