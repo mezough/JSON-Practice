@@ -166,6 +166,7 @@ will result:
 > _comment:_ it should be loaded with the live server
 
 The _getJSON()_ method is used to get JSON-encoded data from the server using an AJAX HTTP GET request.
+
 **Syntax**
 
 > $(selector).getJSON(url,data,success(data,status,xhr))
@@ -208,25 +209,111 @@ The _getJSON()_ method is used to get JSON-encoded data from the server using an
 ```javascript
 // index.html file
 
+// <script>
 $.getJSON("employee.json", function (data) {
   console.log(data);
 });
+// </script>
 ```
 
-To loop the data:
+To loop and print the data:
 
 ```javascript
 // index.html file
- <script>
-        $.getJSON("employee.json", function (data) {
-            console.log(data);
-            var content = '';
+<div id="show"></div>;
 
-            for (var x in data) {
-                content += data[x].name + "<br>";
-                console.log(content);
+// <script>
+$.getJSON("employee.json", function (data) {
+  console.log(data);
+  var content = "";
 
-            }
-        })
-    </script>
+  // loop the data
+  for (var x in data) {
+    content += data[x].name + "<br>";
+    console.log(content);
+  }
+
+  //   print the data
+  $("#show").html(content);
+
+  // </script>
+});
+```
+
+### Load JSON Data With _jQuery_ by **$Ajax**
+
+The jQuery ajax() method is used to perform asynchronous HTTP requests, allowing you to load data from a server without reloading the webpage. It provides a flexible way to interact with remote servers using GET, POST, or other HTTP methods, supporting various data formats.
+
+**Syntax**
+
+> jQuery.ajax( url [, settings ] )
+> **Settings:** are a set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with _$.ajaxSetup()_.
+
+**Settings**
+
+The list of possible **settings** that can be passed to an Ajax request are listed below:
+
+| Property                     | Description                                                                            |
+| ---------------------------- | -------------------------------------------------------------------------------------- |
+| type                         | Specifies the request type as POST or GET.                                             |
+| url                          | Specifies the URL to send the request to.                                              |
+| username                     | Specifies the username for HTTP access authentication.                                 |
+| xhr                          | Creates the XMLHttpRequest object.                                                     |
+| async                        | Default is `true`. Specifies if the request is asynchronous.                           |
+| beforeSend(xhr)              | A function executed before the request is sent.                                        |
+| dataType                     | Expected data type of the server response.                                             |
+| error(xhr, status, error)    | A function executed if the request fails.                                              |
+| global                       | Default is `true`. Specifies whether to trigger global AJAX events.                    |
+| ifModified                   | Default is `false`. A request is successful only if the response has changed.          |
+| jsonp                        | Overrides the callback function for JSONP requests.                                    |
+| jsonpCallback                | Specifies a name for the callback function in a JSONP request.                         |
+| cache                        | Default is `true`. Indicates whether the browser should cache requested pages.         |
+| complete(xhr, status)        | A function that runs when the request is finished.                                     |
+| contentType                  | Default is `"application/x-www-form-urlencoded"`. Specifies content type of data sent. |
+| context                      | Specifies the `"this"` value for all AJAX-related callbacks.                           |
+| data                         | Specifies data to be sent to the server.                                               |
+| dataFilter(data, type)       | Handles raw response data from the XMLHttpRequest.                                     |
+| password                     | Specifies a password for HTTP access authentication.                                   |
+| processData                  | Default is `true`. Specifies if the data should be transformed into a query string.    |
+| scriptCharset                | Specifies the charset for the request.                                                 |
+| success(result, status, xhr) | Runs when the request succeeds.                                                        |
+| timeout                      | Local timeout for the request, measured in milliseconds.                               |
+| traditional                  | Specifies whether to use the traditional style of parameter serialization.             |
+
+    **_Example:_**
+
+```javascript
+// after you load jquery library in script element
+
+$.ajax({
+  url: "employee.json",
+  dataType: "json",
+  cache: false,
+  success: function (data, status) {
+    console.log(data);
+  },
+});
+```
+
+To loop and print the data:
+
+```javascript
+$.ajax({
+  url: "employee.json",
+  dataType: "json",
+  cache: false,
+  success: function (data, status) {
+    console.log(data);
+    var content = "";
+
+    // loop the data
+    for (var x in data) {
+      content += data[x].name + "<br>";
+      console.log(content);
+    }
+
+    //   print the data
+    $("#show").html(content);
+  },
+});
 ```
